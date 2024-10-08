@@ -4,14 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FSXStealth's Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
+        /* Base styles */
         body {
             margin: 0;
-            font-family: 'Courier New', Courier, monospace; /* Retro font */
-            color: #00ff00; /* Bright green */
-            background-color: black;
-            overflow: hidden; /* Prevent scrollbars */
+            font-family: 'Arial', sans-serif; /* Clean font */
+            color: #fff; /* White text for contrast */
+            background-color: #0d0d0d; /* Dark background */
+            overflow-y: auto; /* Allow vertical scrolling */
+            scroll-behavior: smooth; /* Smooth scrolling effect */
+            position: relative; /* Position for background */
+            height: 100vh; /* Full viewport height */
         }
+
         .background {
             position: fixed;
             top: 0;
@@ -20,59 +26,142 @@
             height: 100%;
             background-image: url('background.webp'); /* Ensure this is your blurry background image */
             background-size: cover;
+            background-position: center; /* Center the background */
             filter: blur(10px); /* Apply blur effect */
             z-index: -1; /* Send background to the back */
         }
+
         .container {
             position: relative;
             z-index: 1; /* Ensure content is on top of background */
             text-align: center;
-            padding: 20px;
+            padding: 50px 20px; /* Increased padding */
             border: 2px solid #00ff00; /* Bright green border */
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5); /* Neon glow effect */
-            background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-            max-width: 800px;
-            margin: auto;
-            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 0 30px rgba(0, 255, 0, 0.8); /* Neon glow effect */
+            background: rgba(0, 0, 0, 0.8); /* Darker semi-transparent background */
+            max-width: 800px; /* Set a max width for larger screens */
+            margin: 0 auto; /* Center the container */
+            border-radius: 20px; /* Rounded corners */
+            animation: fadeIn 1s; /* Fade-in animation for container */
+            backdrop-filter: blur(5px); /* Apply backdrop blur */
         }
+
         h1 {
-            font-size: 3em;
-            text-shadow: 0 0 10px #00ff00; /* Glow effect */
+            font-size: 4.5em; /* Large font size */
+            text-shadow: 0 0 20px #00ff00, 0 0 30px #00ff00; /* Glow effect */
+            margin-bottom: 10px;
+            letter-spacing: 2px; /* Increased letter spacing */
         }
+
         h2 {
-            font-size: 1.5em;
-            margin: 10px 0;
-            color: #ffffff; /* White for clarity */
+            font-size: 2.5em; /* Smaller than h1 */
+            margin: 15px 0;
+            color: #00ff00; /* Bright green */
+            text-shadow: 0 0 15px #00ff00; /* Glow effect */
         }
+
         p {
-            font-size: 1.2em;
+            font-size: 1.5em; /* Increased font size */
+            margin: 15px 0; /* Adjusted margin */
+            line-height: 1.6; /* Better line spacing */
+            max-width: 600px; /* Limit paragraph width */
+            margin-left: auto; /* Center align paragraph */
+            margin-right: auto; /* Center align paragraph */
+            opacity: 0; /* Start invisible for animation */
+            animation: slideIn 0.5s ease-in-out forwards; /* Slide-in animation for paragraphs */
         }
+
+        p:nth-of-type(1) {
+            animation-delay: 0.5s; /* Delay for first paragraph */
+        }
+
+        p:nth-of-type(2) {
+            animation-delay: 1s; /* Delay for second paragraph */
+        }
+
+        p:nth-of-type(3) {
+            animation-delay: 1.5s; /* Delay for third paragraph */
+        }
+
         a {
             color: #00ff00; /* Bright green */
-            text-decoration: underline; /* Underline for links */
-            transition: color 0.3s;
+            text-decoration: none; /* Remove underline */
+            transition: color 0.3s, transform 0.3s; /* Transition for hover effects */
+            font-weight: bold; /* Bold text */
+            display: inline-block; /* Make links behave like buttons */
+            padding: 10px 15px; /* Padding for clickable area */
+            border-radius: 5px; /* Slightly rounded corners */
+            background-color: rgba(0, 255, 0, 0.1); /* Light background */
         }
+
         a:hover {
+            background-color: rgba(0, 255, 0, 0.5); /* Light background on hover */
             color: #ff0000; /* Change color on hover */
-            text-decoration: none; /* Remove underline on hover */
+            transform: scale(1.05); /* Slightly enlarge on hover */
         }
+
+        .icon {
+            margin-right: 10px; /* Space between icon and text */
+            font-size: 1.5em; /* Slightly larger icon */
+            vertical-align: middle; /* Center icon with text */
+        }
+
         footer {
             margin-top: 20px;
-            font-size: 0.8em;
-            color: white;
-            position: relative; /* Make footer relative */
+            font-size: 1.2em; /* Slightly larger footer text */
+            color: #00ff00; /* Bright green */
+            animation: fadeIn 1.5s; /* Fade-in animation for footer */
         }
-        /* Add animation for the footer */
-        @keyframes blink {
-            0%, 100% {
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
                 opacity: 1;
             }
-            50% {
-                opacity: 0.5;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
             }
         }
-        footer {
-            animation: blink 1.5s infinite; /* Blinking effect */
+
+        /* Media Queries */
+        @media (max-width: 900px) {
+            h1 {
+                font-size: 3.5em; /* Adjust h1 size for medium screens */
+            }
+            h2 {
+                font-size: 2em; /* Adjust h2 size for medium screens */
+            }
+            p {
+                font-size: 1.3em; /* Adjust paragraph size for medium screens */
+                padding: 0 10px; /* Add some padding */
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5em; /* Adjust h1 size for small screens */
+            }
+            h2 {
+                font-size: 1.8em; /* Adjust h2 size for small screens */
+            }
+            p {
+                font-size: 1.1em; /* Adjust paragraph size for small screens */
+                padding: 0 5px; /* Add some padding */
+            }
+            .container {
+                padding: 20px; /* Reduce padding on small screens */
+                margin: 20px; /* Reduce margin */
+            }
         }
     </style>
 </head>
@@ -80,16 +169,23 @@
     <div class="background"></div>
     <div class="container">
         <h1>FSXStealth</h1>
-        <h2>Age: 18</h2>
-        <h2>Current Studies: High School</h2>
-        <h2>Skills: Programming, Web Design, Game Development</h2>
-        <h2>Projects:</h2>
-        <p><a href="https://fsxstealth.github.io/CatGallery/" target="_blank">Cat Gallery Website</a></p>
-        <p><a href="https://fsxstealth.github.io/OOO1/" target="_blank">OOO1 Fan Website</a></p>
-        <h2>Hobbies: Coding, Pro Evade Player, Drawing</h2>
+        <h2>About Me</h2>
+        <p>
+            Hello! My name is FSXStealth. I am 18 years old and currently studying in high school. I have a passion for programming and enjoy learning new skills in web design and game development.
+        </p>
+        <p>
+            I have created some exciting projects, like the <a href="https://fsxstealth.github.io/CatGallery/" target="_blank">Cat Gallery Website</a> and the <a href="https://fsxstealth.github.io/OOO1/" target="_blank">OOO1 Fan Website</a>
+        </p>
+        <p>
+            In my free time, I love coding, playing Evade, and drawing. I am also a pro player in Evade!
+        </p>
         <h2>Social Media:</h2>
-        <p><a href="https://www.youtube.com/@FSXStealth" target="_blank">YouTube</a> (Over 100 subs)</p>
-        <p><a href="https://www.roblox.com/users/7009060659/profile" target="_blank">Roblox Profile</a></p>
+        <p>
+            <a href="https://www.youtube.com/@FSXStealth" target="_blank"><i class="fa-brands fa-youtube icon"></i>YouTube</a> (I have over 100 subscribers!)
+        </p>
+        <p>
+            <a href="https://www.roblox.com/users/7009060659/profile" target="_blank"><i class="fa-brands fa-roblox icon"></i>Roblox Profile</a>
+        </p>
     </div>
     <footer>
         <p>&copy; 2024 FSXStealth. All rights reserved.</p>
