@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSXStealth's Profile</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Courier New', Courier, monospace; /* Retro font */
+            color: #00ff00; /* Bright green */
+            background-color: black;
+            overflow: hidden; /* Prevent scrollbars */
+        }
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('background.webp'); /* Ensure this is your blurry background image */
+            background-size: cover;
+            filter: blur(10px); /* Apply blur effect */
+            z-index: -1; /* Send background to the back */
+        }
+        .container {
+            position: relative;
+            z-index: 1; /* Ensure content is on top of background */
+            text-align: center;
+            padding: 20px;
+            border: 2px solid #00ff00; /* Bright green border */
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5); /* Neon glow effect */
+            background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            max-width: 800px;
+            margin: auto;
+            border-radius: 10px; /* Rounded corners */
+        }
+        h1 {
+            font-size: 3em;
+            text-shadow: 0 0 10px #00ff00; /* Glow effect */
+        }
+        h2 {
+            font-size: 1.5em;
+            margin: 10px 0;
+            color: #ffffff; /* White for clarity */
+        }
+        p {
+            font-size: 1.2em;
+        }
+        a {
+            color: #00ff00; /* Bright green */
+            text-decoration: underline; /* Underline for links */
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #ff0000; /* Change color on hover */
+            text-decoration: none; /* Remove underline on hover */
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 0.8em;
+            color: white;
+            position: relative; /* Make footer relative */
+        }
+        /* Add animation for the footer */
+        @keyframes blink {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+        footer {
+            animation: blink 1.5s infinite; /* Blinking effect */
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <h1>FSXStealth</h1>
+        <h2>Age: 18</h2>
+        <h2>Current Studies: High School</h2>
+        <h2>Skills: Programming, Web Design, Game Development</h2>
+        <h2>Projects:</h2>
+        <p><a href="https://fsxstealth.github.io/CatGallery/" target="_blank">Cat Gallery Website</a></p>
+        <p><a href="https://fsxstealth.github.io/OOO1/" target="_blank">OOO1 Fan Website</a></p>
+        <h2>Hobbies: Coding, Pro Evade Player, Drawing</h2>
+        <h2>Social Media:</h2>
+        <p><a href="https://www.youtube.com/@FSXStealth" target="_blank">YouTube</a> (Over 100 subs)</p>
+        <p><a href="https://www.roblox.com/users/7009060659/profile" target="_blank">Roblox Profile</a></p>
+    </div>
+    <footer>
+        <p>&copy; 2024 FSXStealth. All rights reserved.</p>
+    </footer>
+</body>
+</html>
